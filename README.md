@@ -189,9 +189,8 @@ The workflow contains 11 nodes organized into five stages:
     Dashboard
 ```
 
-**📸 Screenshot Placeholder**
+<img width="1142" height="641" alt="image" src="https://github.com/user-attachments/assets/e2dda37c-dc37-4ec7-b833-6f286de2f85b" />
 
-`[Insert screenshot of the complete n8n workflow showing all 11 nodes and both severity branches]`
 
 ---
 
@@ -227,9 +226,8 @@ The sample alert represents an SSH brute-force event involving repeated authenti
 
 The webhook passes the JSON payload downstream for processing.
 
-**📸 Screenshot Placeholder**
+<img width="1741" height="320" alt="image" src="https://github.com/user-attachments/assets/5fd9c1ce-6ac4-492b-ad63-edaafb17655d" />
 
-`[Insert screenshot of the Wazuh Alert Intake node and sample alert payload]`
 
 ### Step 2: Configure the Brute-Force Alert Simulator
 
@@ -251,9 +249,6 @@ Alert JSON
 
 The submitted payload is then passed to the same normalization and enrichment pipeline used by the webhook.
 
-**📸 Screenshot Placeholder**
-
-`[Insert screenshot of the alert simulator form]`
 
 ### Step 3: Extract and Normalize Alert Fields
 
@@ -291,9 +286,6 @@ This allows the workflow to associate enrichment results, notifications, and Tre
 
 Once normalization is complete, downstream nodes can process alerts without needing to know which intake method was used.
 
-**📸 Screenshot Placeholder**
-
-`[Insert screenshot of the Extract Alert Fields node and normalized JSON output]`
 
 ### Step 4: Query AbuseIPDB Threat Intelligence
 
@@ -343,12 +335,6 @@ country_code
 hostnames
 ```
 
-**📸 Screenshot Placeholder**
-
-`[Insert screenshot of the AbuseIPDB HTTP Request configuration]`
-
-`[Insert screenshot of the returned JSON reputation data]`
-
 ### Step 5: Merge Alert and Threat Intelligence Data
 
 **Node:** Merge AbuseIPDB Data
@@ -384,9 +370,6 @@ This allows the scoring and reporting nodes to reference both the original secur
 
 Centralizing these fields simplifies the remaining workflow logic.
 
-**📸 Screenshot Placeholder**
-
-`[Insert screenshot of the merged JSON output]`
 
 ### Step 6: Calculate the Weighted Risk Score
 
@@ -482,10 +465,6 @@ Consider an alert with the following indicators:
 
 The scoring model is intended to support initial triage rather than replace analyst judgment.
 
-**📸 Screenshot Placeholder**
-
-`[Insert screenshot of the Calculate Risk Score node showing risk_score, severity, and reasons]`
-
 ### Step 7: Build the Incident Summary
 
 **Node:** Build Incident Summary
@@ -546,10 +525,6 @@ and network security logs.
 
 *Note: The enrichment values and calculated score above are illustrative, not verified lab results.*
 
-**📸 Screenshot Placeholder**
-
-`[Insert screenshot of the formatted incident summary output]`
-
 ### Step 8: Route Alerts by Severity
 
 **Node:** Route by Severity
@@ -582,9 +557,6 @@ This routing approach reduces unnecessary ticket creation while maintaining noti
 
 **Minimum score required for Trello ticket creation: 70**
 
-**📸 Screenshot Placeholder**
-
-`[Insert screenshot of the IF node and severity routing configuration]`
 
 ### Step 9: Create an Investigation Ticket in Trello
 
@@ -610,13 +582,6 @@ The Trello API returns a URL for the newly created card.
 
 That URL is subsequently used by the HTML incident dashboard.
 
-**📸 Screenshot Placeholders**
-
-`[Insert screenshot of the Trello node configuration]`
-
-`[Insert screenshot of a successfully created investigation ticket]`
-
-`[Insert screenshot of the Trello SOC board showing generated incident cards]`
 
 ### Step 10: Send Real-Time Notifications Using ntfy
 
@@ -655,9 +620,6 @@ This enables analysts to review key incident details without immediately opening
 
 **Security Note:** Public ntfy topics may be accessible to others. Production environments should use authenticated or access-controlled notification channels rather than publicly accessible topics containing sensitive incident data.
 
-**📸 Screenshot Placeholder**
-
-`[Insert screenshot of the ntfy notification and configured priority]`
 
 ### Step 11: Generate the Brute-Force Incident Dashboard
 
@@ -687,12 +649,6 @@ The dashboard displays:
 For HIGH and CRITICAL alerts, the dashboard also includes a direct link to the generated Trello ticket.
 
 **Important:** In the current workflow configuration, the dashboard only executes for HIGH and CRITICAL alerts because it is connected downstream of the Trello ticket node.
-
-**📸 Screenshot Placeholder**
-
-`[Insert screenshot of the completed HTML incident dashboard]`
-
-`[Insert screenshot showing the View Investigation Ticket link]`
 
 ---
 
@@ -752,25 +708,26 @@ Therefore, the final score can range from 30 to 100 under this model.
 
 #### Findings to Document
 
-Record the actual values returned during execution:
+Actual values returned during execution:
 
 | Metric | Observed Result |
 |--------|-----------------|
-| AbuseIPDB Score | `[Enter result]` |
-| Total Reports | `[Enter result]` |
-| Tor Exit Node | `[True / False]` |
-| Final Risk Score | `[Enter result]` |
-| Severity | `[Enter result]` |
-| Trello Ticket Created | `[Yes / No]` |
-| ntfy Notification Sent | `[Yes / No]` |
+| AbuseIPDB Score | `100` |
+| Total Reports | `298` |
+| Tor Exit Node | `True` |
+| Final Risk Score | `100` |
+| Severity | `CRITICAL` |
+| Trello Ticket Created | `Yes` |
+| ntfy Notification Sent | `Yes` |
 
 **📸 Screenshot Placeholders**
 
-`[Insert screenshot of the AbuseIPDB enrichment results]`
+<img width="1908" height="864" alt="image" src="https://github.com/user-attachments/assets/ddbb4fde-6262-4738-b34c-fe7581b5d944" />
 
-`[Insert screenshot of the risk calculation and reasons array]`
+<img width="1898" height="645" alt="image" src="https://github.com/user-attachments/assets/28311c28-6c08-468d-9916-dc988bdc5092" />
 
-`[Insert screenshot of the resulting Trello ticket, if created]`
+<img width="1899" height="641" alt="image" src="https://github.com/user-attachments/assets/57336737-28ef-4b87-af40-bf7cd28a8f17" />
+
 
 ### Test 2: Low-Risk Authentication Alert
 
@@ -817,13 +774,13 @@ For a LOW classification:
 
 | Metric | Observed Result |
 |--------|-----------------|
-| AbuseIPDB Score | `[Enter result]` |
-| Total Reports | `[Enter result]` |
-| Final Risk Score | `[Enter result]` |
-| Severity | `[Enter result]` |
-| Routing Branch | `[True / False]` |
-| Trello Ticket Created | `[Yes / No]` |
-| ntfy Notification Sent | `[Yes / No]` |
+| AbuseIPDB Score | `0` |
+| Total Reports | `196` |
+| Final Risk Score | `5` |
+| Severity | `LOW` |
+| Routing Branch | `False` |
+| Trello Ticket Created | `No` |
+| ntfy Notification Sent | `Yes` |
 
 #### Important Observation
 
@@ -837,11 +794,10 @@ As a result, a whitelisted IP is not automatically assigned LOW severity; its cl
 
 **📸 Screenshot Placeholders**
 
-`[Insert screenshot of the low-risk alert JSON submission]`
+<img width="1885" height="602" alt="image" src="https://github.com/user-attachments/assets/9afe4642-9166-4807-8d42-4a1e59844749" />
 
-`[Insert screenshot showing the calculated LOW severity, if observed]`
+<img width="1889" height="909" alt="image" src="https://github.com/user-attachments/assets/f30053d2-4791-4a79-9486-f68b21a66aca" />
 
-`[Insert screenshot confirming the False routing branch]`
 
 ### Test 3: High-Severity Brute-Force Alert
 
@@ -887,23 +843,19 @@ If the combined score reaches 70 or higher:
 
 | Metric | Observed Result |
 |--------|-----------------|
-| AbuseIPDB Score | `[Enter result]` |
-| Tor Exit Node | `[True / False]` |
-| Total Reports | `[Enter result]` |
-| Final Risk Score | `[Enter result]` |
-| Severity | `[Enter result]` |
-| Trello Ticket Created | `[Yes / No]` |
-| Dashboard Rendered | `[Yes / No]` |
+| AbuseIPDB Score | `100` |
+| Tor Exit Node | `True` |
+| Total Reports | `298` |
+| Final Risk Score | `100` |
+| Severity | `CRITICAL` |
+| Trello Ticket Created | `Yes` |
+| Dashboard Rendered | `Yes` |
 
 **📸 Screenshot Placeholders**
 
-`[Insert screenshot of the calculated risk score]`
+<img width="1896" height="603" alt="image" src="https://github.com/user-attachments/assets/be8c50e5-3152-49c1-b8d5-2e77d9526827" />
 
-`[Insert screenshot of the True severity-routing branch]`
-
-`[Insert screenshot of the generated Trello card]`
-
-`[Insert screenshot of the HTML dashboard with the investigation ticket link]`
+<img width="1885" height="910" alt="image" src="https://github.com/user-attachments/assets/3d6f7c34-0060-43ca-a052-712c16d0c5e8" />
 
 ---
 
