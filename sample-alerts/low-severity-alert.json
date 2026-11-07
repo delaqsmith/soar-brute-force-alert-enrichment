@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-05-15T14:10:00.000+0000",
+  "rule": {
+    "level": 5,
+    "description": "sshd: authentication failed.",
+    "id": "5503",
+    "mitre": {
+      "id": ["T1110"],
+      "tactic": ["Credential Access"],
+      "technique": ["Brute Force"]
+    },
+    "firedtimes": 3
+  },
+  "agent": {
+    "id": "007",
+    "name": "dev-server-03",
+    "ip": "10.0.3.22"
+  },
+  "data": {
+    "srcip": "8.8.8.8",
+    "dstuser": "ubuntu",
+    "program_name": "sshd",
+    "id": "3"
+  }
+}
