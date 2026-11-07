@@ -91,14 +91,6 @@ The observed Trello ticket and ntfy notification confirm that the high-priority 
 
 **PASS — CRITICAL scoring, ticket creation, and ntfy notification observed.** Dashboard rendering was not separately reported for this test.
 
-**Evidence to attach:**
-
-- `../screenshots/test1-abuseipdb.png` — AbuseIPDB score, reports, and Tor status
-- `../screenshots/test1-risk-score.png` — Risk score, severity, and contributing reasons
-- `../screenshots/test1-trello-ticket.png` — Created Trello card
-- `../screenshots/test1-ntfy.png` — Delivered notification
-
-*Screenshot paths above are suggested filenames; add the corresponding screenshots before using them as links.*
 
 ---
 
@@ -158,13 +150,6 @@ The low score does not prove the activity was benign. In particular, `ubuntu` ma
 
 **PASS — LOW scoring, False-branch routing, ntfy notification, and Trello suppression observed.** The dashboard was not expected to run on this branch in the documented workflow design.
 
-**Evidence to attach:**
-
-- `../screenshots/test2-abuseipdb.png`
-- `../screenshots/test2-risk-score.png`
-- `../screenshots/test2-routing.png`
-- `../screenshots/test2-ntfy.png`
-
 ---
 
 ## 🔴 Test 3 — Simulated High-Risk SSH Brute-Force Alert
@@ -220,14 +205,6 @@ Because the outcome was CRITICAL, this test **did not independently validate HIG
 ### Test Outcome
 
 **PASS — CRITICAL scoring, Trello ticket creation, and HTML dashboard rendering observed.** HIGH-only threshold behavior and Test 3 ntfy delivery remain unverified.
-
-**Evidence to attach:**
-
-- `../screenshots/test3-abuseipdb.png`
-- `../screenshots/test3-risk-score.png`
-- `../screenshots/test3-routing.png`
-- `../screenshots/test3-trello-ticket.png`
-- `../screenshots/test3-dashboard.png`
 
 ---
 
