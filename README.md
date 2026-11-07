@@ -1027,28 +1027,6 @@ Replace public notification topics with authenticated, access-controlled messagi
 
 ---
 
-## 🎥 Project Demonstration
-
-The workflow can be demonstrated using either the Wazuh sample alert or the form-based simulator.
-
-### Demonstration Steps
-
-1. Open the n8n workflow.
-2. Execute the Wazuh sample alert or submit a JSON payload through the form.
-3. Observe the normalized alert output.
-4. Inspect the AbuseIPDB enrichment response.
-5. Review the calculated risk score and reasons array.
-6. Confirm the severity classification.
-7. Observe the routing decision.
-8. Review the ntfy notification.
-9. For HIGH or CRITICAL alerts, inspect the Trello ticket and HTML dashboard.
-
-**📸 Screenshot Placeholder**
-
-`[Insert GIF or screenshots showing the workflow executing from alert intake through incident notification]`
-
----
-
 ## 🔐 Security Considerations
 
 Several security controls should be considered before adapting this workflow to a production SOC environment.
